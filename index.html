@@ -226,14 +226,14 @@ function escapeHTML(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').repla
 function showUpgradePrompt(){toast('🔒 Upgrade to Pro to use this tool');showPricing()}
 function handleUpgrade(){
   // STRIPE: Replace with your Payment Link from https://dashboard.stripe.com/payment-links
-  var stripePaymentLink = 'https://buy.stripe.com/PLACEHOLDER';
-  if (stripePaymentLink.indexOf('PLACEHOLDER') === -1) {
+  var stripePaymentLink = 'https://buy.stripe.com/test_5kQ5kDc4cfZm29E1N6fUQ00';
+  if (stripePaymentLink.indexOf('test_5kQ5kDc4cfZm29E1N6fUQ00') !== -1) {
     window.open(stripePaymentLink,'_blank');
     toast('Redirecting to secure Stripe checkout...');
   } else {
     // Fallback: Ko-fi donation page
-    window.open('https://ko-fi.com/YOUR_KOFI','_blank');
-    toast('Stripe not configured. Opening donation page...');
+    window.open('https://buy.stripe.com/test_5kQ5kDc4cfZm29E1N6fUQ00','_blank');
+    toast('Redirecting to Stripe checkout...');
   }
 }
 function showPricing(){document.getElementById('pricing').scrollIntoView({behavior:'smooth'})}
